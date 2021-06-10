@@ -93,7 +93,7 @@ module Administrate
 
       def fetch_resources(set)
         if options.key?(:where)
-          set.where(:where)
+          set.where(options[:where])
         else
           set.all
         end
