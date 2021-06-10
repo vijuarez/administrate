@@ -85,9 +85,17 @@ module Administrate
       def candidate_resources
         if options.key?(:includes)
           includes = options.fetch(:includes)
-          associated_class.includes(*includes).all
+          fetch_resources(associated_class.includes(*includes))
         else
-          associated_class.all
+          fetch_resources(associated_class.all)
+        end
+      end
+
+      def fetch_resources(set)
+        if options.key?(:where)
+          set.where(:where)
+        else
+          set.all
         end
       end
 
