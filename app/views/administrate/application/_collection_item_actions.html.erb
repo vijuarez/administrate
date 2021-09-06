@@ -6,13 +6,13 @@
   ) if accessible_action?(resource, :edit) %></td>
 <% end %>
 
-<% if valid_action?(:duplicate, collection_presenter.resource_name) %>
+<% if existing_action?(collection_presenter.resource_name, :duplicate) %>
   <td class="cell-label--action-button"><%= link_to(
-            t("administrate.actions.duplicate"),
-            [:duplicate, namespace, resource],
-            class: "action-duplicate",
-            method: :post,
-            ) if show_action?(:duplicate, resource) %></td>
+    t("administrate.actions.duplicate"),
+    [:duplicate, namespace, resource],
+    class: "action-duplicate",
+    method: :post,
+  ) if accessible_action?(resource, :duplicate) %></td>
 <% end %>
 
 <% if existing_action?(collection_presenter.resource_name, :destroy) %>
