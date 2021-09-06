@@ -57,6 +57,22 @@ module Administrate
       end
     end
 
+    def duplicate
+      resource = requested_resource.dup
+      authorize_resource(resource)
+
+      if resource.save
+        redirect_to(
+          after_resource_created_path(resource),
+          notice: translate_with_resource("duplicate.success"),
+          )
+      else
+        render :new, locals: {
+          page: Administrate::Page::Form.new(dashboard, resource),
+        }, status: :unprocessable_entity
+      end
+    end
+
     def update
       if requested_resource.update(resource_params)
         redirect_to(

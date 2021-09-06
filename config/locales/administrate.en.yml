@@ -9,11 +9,14 @@ en:
       show_resource: Show %{name}
       new_resource: New %{name}
       back: Back
+      duplicate: "Duplicate"
     controller:
       create:
         success: "%{resource} was successfully created."
       destroy:
         success: "%{resource} was successfully destroyed."
+      duplicate:
+        success: "%{resource} was successfully duplicated."
       update:
         success: "%{resource} was successfully updated."
     fields:

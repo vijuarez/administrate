@@ -6,6 +6,14 @@
   ) if show_action? :edit, resource%></td>
 <% end %>
 
+<% if valid_action?(:duplicate, collection_presenter.resource_name) %>
+  <td><%= link_to(
+            t("administrate.actions.duplicate"),
+            [:duplicate, namespace, resource],
+            class: "action-duplicate",
+            ) if show_action?(:duplicate, resource) %></td>
+<% end %>
+
 <% if valid_action? :destroy, collection_presenter.resource_name %>
   <td><%= link_to(
     t("administrate.actions.destroy"),

@@ -14,6 +14,8 @@ es:
         success: "%{resource} fue creado exitosamente."
       destroy:
         success: "%{resource} fue destruido exitosamente."
+      duplicate:
+        success: "%{resource} fue duplicado exitosamente."
       update:
         success: "%{resource} fue actualizado exitosamente."
     fields:
