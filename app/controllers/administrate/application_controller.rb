@@ -5,12 +5,10 @@ module Administrate
     def index
       authorize_resource(resource_class)
       search_term = params[:search].to_s.strip
-      resources = Administrate::Search.new(scoped_resource,
-                                           dashboard_class,
-                                           search_term).run
+      resources = filter_resources(scoped_resource, search_term: search_term)
       resources = apply_collection_includes(resources)
       resources = order.apply(resources)
-      resources = resources.page(params[:_page]).per(records_per_page)
+      resources = paginate_resources(resources)
       page = Administrate::Page::Collection.new(dashboard, order: order)
 
       render locals: {
@@ -97,6 +95,14 @@ module Administrate
 
     private
 
+    def filter_resources(resources, search_term:)
+      Administrate::Search.new(
+        resources,
+        dashboard,
+        search_term,
+      ).run
+    end
+
     def after_resource_destroyed_path(_requested_resource)
       { action: :index }
     end
@@ -117,13 +123,11 @@ module Administrate
 
     helper_method :valid_action?
     def valid_action?(name, resource = resource_class)
-      !!routes.detect do |controller, action|
-        controller == resource.to_s.underscore.pluralize && action == name.to_s
-      end
+      routes.include?([resource.to_s.underscore.pluralize, name.to_s])
     end
 
     def routes
-      @routes ||= Namespace.new(namespace).routes
+      @routes ||= Namespace.new(namespace).routes.to_set
     end
 
     def records_per_page
@@ -131,7 +135,23 @@ module Administrate
     end
 
     def order
-      @order ||= Administrate::Order.new(sorting_attribute, sorting_direction)
+      @order ||= Administrate::Order.new(
+        sorting_attribute,
+        sorting_direction,
+        association_attribute: order_by_field(
+          dashboard_attribute(sorting_attribute),
+        ),
+      )
+    end
+
+    def order_by_field(dashboard)
+      return unless dashboard.try(:options)
+
+      dashboard.options.fetch(:order, nil)
+    end
+
+    def dashboard_attribute(attribute)
+      dashboard.attribute_types[attribute.to_sym] if attribute
     end
 
     def sorting_attribute
@@ -234,6 +254,10 @@ module Administrate
 
     def authorize_resource(resource)
       resource
+    end
+
+    def paginate_resources(resources)
+      resources.page(params[:_page]).per(records_per_page)
     end
   end
 end
