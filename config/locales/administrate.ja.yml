@@ -9,7 +9,10 @@ ja:
       show_resource: "%{name}を参照"
       new_resource: "%{name}を作成"
       back: 戻る
+      duplicate: 複製
     controller:
+      duplicate:
+        success: "%{resource}を複製しました。"
       create:
         success: "%{resource}を作成しました。"
       destroy:

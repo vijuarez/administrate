@@ -9,7 +9,10 @@ ko:
       show_resource: "%{name}"
       new_resource: 새 %{name}
       back: 뒤로
+      duplicate: 복제
     controller:
+      duplicate:
+        success: "%{resource}가 성공적으로 복제되었습니다."
       create:
         success: "%{resource}가 성공적으로 생성되었습니다."
       destroy:

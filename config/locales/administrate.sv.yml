@@ -9,7 +9,10 @@ sv:
       show_resource: Visa %{name}
       new_resource: Ny %{name}
       back: Tillbaka
+      duplicate: Duplicera
     controller:
+      duplicate:
+        success: "%{resource} har duplicerats."
       create:
         success: "%{resource} har skapats."
       destroy:

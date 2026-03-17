@@ -9,7 +9,10 @@ zh-TW:
       show_resource: 檢視 %{name}
       new_resource: 新增 %{name}
       back: 返回
+      duplicate: 複製
     controller:
+      duplicate:
+        success: "已成功複製 %{resource}。"
       create:
         success: "已成功新增 %{resource}。"
       destroy:

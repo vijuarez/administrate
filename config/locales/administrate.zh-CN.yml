@@ -9,7 +9,10 @@ zh-CN:
       show_resource: 查看 %{name}
       new_resource: 新建 %{name}
       back: 返回
+      duplicate: 复制
     controller:
+      duplicate:
+        success: "%{resource} 复制成功."
       create:
         success: "%{resource} 创建成功."
       destroy:

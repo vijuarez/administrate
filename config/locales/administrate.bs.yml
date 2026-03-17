@@ -8,7 +8,10 @@ bs:
       show_resource: Pregled %{name}
       new_resource: Novi %{name}
       back: Nazad
+      duplicate: Dupliciraj
     controller:
+      duplicate:
+        success: "%{resource} je uspješno dupliciran."
       create:
         success: "%{resource} je uspješno kreiran."
       destroy:

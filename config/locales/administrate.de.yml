@@ -9,7 +9,10 @@ de:
       show_resource: "%{name} anzeigen"
       new_resource: "%{name} erstellen"
       back: Zurück
+      duplicate: Duplizieren
     controller:
+      duplicate:
+        success: "%{resource} wurde erfolgreich dupliziert."
       create:
         success: "%{resource} wurde erfolgreich erstellt."
       destroy:

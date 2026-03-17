@@ -9,7 +9,10 @@ tr:
       show_resource: "%{name} Kaydını Göster"
       new_resource: Yeni %{name}
       back: Geri
+      duplicate: Çoğalt
     controller:
+      duplicate:
+        success: "%{resource} kaydı başarıyla çoğaltıldı."
       create:
         success: "%{resource} kaydı başarıyla yaratıldı."
       destroy:

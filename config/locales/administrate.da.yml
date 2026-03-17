@@ -9,7 +9,10 @@ da:
       show_resource: Vis %{name}
       new_resource: Ny %{name}
       back: Tilbage
+      duplicate: Dupliker
     controller:
+      duplicate:
+        success: "%{resource} blev duplikeret."
       create:
         success: "%{resource} blev oprettet."
       destroy:

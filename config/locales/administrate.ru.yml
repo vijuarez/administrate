@@ -9,7 +9,10 @@ ru:
       show_resource: Показать %{name}
       new_resource: Новый %{name}
       back: Вернуться назад
+      duplicate: Дублировать
     controller:
+      duplicate:
+        success: "%{resource} был успешно продублирован."
       create:
         success: "%{resource} был успешно создан."
       destroy:

@@ -10,7 +10,10 @@ pt-BR:
       show_resource: Visualizar %{name}
       new_resource: Criar %{name}
       back: Voltar
+      duplicate: Duplicar
     controller:
+      duplicate:
+        success: "%{resource} foi duplicado com sucesso."
       create:
         success: "%{resource} foi criado com sucesso."
       destroy:

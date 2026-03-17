@@ -9,7 +9,10 @@ uk:
       show_resource: Показати %{name}
       new_resource: Новий %{name}
       back: Назад
+      duplicate: Дублювати
     controller:
+      duplicate:
+        success: "Успішно продубльовано %{resource}."
       create:
         success: "Успішно створено %{resource}."
       destroy:

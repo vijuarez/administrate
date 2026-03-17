@@ -9,7 +9,10 @@ vi:
       show_resource: Xem %{name}
       new_resource: Mới %{name}
       back: Trở lại
+      duplicate: Nhân bản
     controller:
+      duplicate:
+        success: "%{resource} đã được nhân bản thành công."
       create:
         success: "%{resource} đã được tạo thành công."
       destroy:

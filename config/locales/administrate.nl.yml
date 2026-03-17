@@ -9,7 +9,10 @@ nl:
       show_resource: Toon %{name}
       new_resource: Nieuw %{name}
       back: Terug
+      duplicate: Dupliceren
     controller:
+      duplicate:
+        success: "%{resource} is succesvol gedupliceerd."
       create:
         success: "%{resource} is succesvol aangemaakt."
       destroy:

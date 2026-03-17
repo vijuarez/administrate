@@ -9,7 +9,10 @@ sq:
       show_resource: Trego %{name}
       new_resource: Të re %{name}
       back: Prapa
+      duplicate: Dubliko
     controller:
+      duplicate:
+        success: "%{resource} është dubluar me sukses."
       create:
         success: "%{resource} është krijuar me sukses."
       destroy:

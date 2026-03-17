@@ -9,7 +9,10 @@ fi:
       show_resource: Näytä %{name}
       new_resource: Uusi %{name}
       back: Takaisin
+      duplicate: Monista
     controller:
+      duplicate:
+        success: "%{resource} monistettiin onnistuneesti."
       create:
         success: "%{resource} luotiin onnistuneesti."
       destroy:

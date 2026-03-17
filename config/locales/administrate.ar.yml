@@ -9,7 +9,10 @@ ar:
       show_resource: "إظهار %{name}"
       new_resource: "جديد  %{name}"
       back: "الى الخلف"
+      duplicate: "استنساخ"
     controller:
+      duplicate:
+        success: ".بنجاح %{resource} لقد تم استنساخ"
       create:
         success: ".بنجاح %{resource} لقد تم إنشاء"
       destroy:

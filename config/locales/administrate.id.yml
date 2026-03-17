@@ -9,7 +9,10 @@ id:
       show_resource: Tampilkan %{name}
       new_resource: "%{name} baru"
       back: Kembali
+      duplicate: Duplikat
     controller:
+      duplicate:
+        success: "%{resource} telah berhasil diduplikasi."
       create:
         success: "%{resource} telah berhasil dibuat."
       destroy:

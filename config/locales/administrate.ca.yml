@@ -9,7 +9,10 @@ ca:
       show_resource: Mostra %{name}
       new_resource: Nou %{name}
       back: Tornar
+      duplicate: Duplicar
     controller:
+      duplicate:
+        success: "%{resource} s'ha duplicat amb èxit."
       create:
         success: "%{resource} s'ha creat amb èxit."
       destroy:

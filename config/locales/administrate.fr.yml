@@ -9,7 +9,10 @@ fr:
       show_resource: Détails %{name}
       new_resource: Création %{name}
       back: Précédent
+      duplicate: Dupliquer
     controller:
+      duplicate:
+        success: "%{resource} a été correctement dupliqué(e)."
       create:
         success: "%{resource} a été correctement créé(e)."
       destroy:

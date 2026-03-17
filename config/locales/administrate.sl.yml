@@ -9,7 +9,10 @@ sl:
       show_resource: Prikaži %{name}
       new_resource: Dodaj %{name}
       back: Nazaj
+      duplicate: Podvoji
     controller:
+      duplicate:
+        success: "%{resource} je podvojen."
       create:
         success: "%{resource} je dodan."
       destroy:

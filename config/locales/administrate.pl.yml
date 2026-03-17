@@ -9,7 +9,10 @@ pl:
       show_resource: Wyświetl %{name}
       new_resource: Nowy %{name}
       back: Wstecz
+      duplicate: Duplikuj
     controller:
+      duplicate:
+        success: "Zasób %{resource} został pomyślnie zduplikowany."
       create:
         success: "Zasób %{resource} został pomyślnie utworzony."
       destroy:
